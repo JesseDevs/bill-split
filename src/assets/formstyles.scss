@@ -1,0 +1,95 @@
+button {
+	background-color: var(--color-secondary);
+	border: var(--line) solid transparent;
+	border-radius: 2px;
+	box-sizing: border-box;
+	color: var(--color-third);
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.1rem;
+	font-weight: 600;
+	line-height: 1;
+	padding: 1rem 1.6rem;
+	text-align: center;
+	text-decoration: none var(--color-third) solid;
+	text-decoration-thickness: auto;
+	transition: all .2s ease;
+	box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+	user-select: none;
+	touch-action: manipulation;
+}
+
+button:hover {
+	background-color: var(--color-third);
+	color: var(--white);
+}
+
+@media (min-width: 768px) {
+	button {
+		font-size: 1.125rem;
+		padding: 1rem 2rem;
+	}
+}
+
+button:disabled,
+button[disabled] {
+	pointer-events: none;
+	border: var(--line) solid var(--color-third-30);
+	background-color: var(--disabled-dark);
+	color: var(--disabled);
+}
+
+input {
+	width: 100%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	appearance: textfield;
+}
+
+input[type=number] {
+	padding: 15px;
+	font-size: 2rem;
+	font-family: monospace;
+}
+
+input[type='range'] {
+	margin-top: 15px;
+	margin-bottom: 20px;
+	appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+
+	&::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 1px;
+		cursor: pointer;
+		box-shadow: none;
+		background: var(--textaccent);
+		border-radius: 0px;
+		border: 0px solid var(--accent);
+	}
+
+	&::-webkit-slider-thumb {
+		box-shadow: none;
+		border: 0px solid #ffffff;
+		box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+		height: 42px;
+		width: 22px;
+		border-radius: 22px;
+		background: var(--red);
+		cursor: pointer;
+		-webkit-appearance: none;
+		margin-top: -20px;
+	}
+
+}

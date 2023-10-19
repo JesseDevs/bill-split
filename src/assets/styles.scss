@@ -1,0 +1,62 @@
+@import 'reset.scss';
+@import 'typography.scss';
+@import 'color.scss';
+@import 'formstyles.scss';
+
+#app {
+	display: contents;
+	line-height: 1.4;
+}
+
+html,
+body {
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	font-size: var(--size-base);
+}
+
+body {
+	scroll-behavior: smooth;
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 90px);
+
+	color: var(--text);
+	background: var(--background);
+	// transition:
+	// 	color 0.5s,
+	// 	background-color 0.5s;
+	line-height: 1.4;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	main {
+		flex-grow: 1;
+	}
+}
+
+inner-column {
+	display: block;
+	position: relative;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 1150px;
+	margin: auto;
+	padding: 4rem 4rem;
+	z-index: 1;
+}
+
+@media (max-width: 768px) {
+	inner-column {
+		padding: 4rem 2rem;
+
+	}
+}
+
+text-content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
