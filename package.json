@@ -1,0 +1,31 @@
+{
+	"name": "bill-split",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build:dev": "vite build --mode development",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+		"deploy": "vite build && cp dist/index.html dist/200.html && surge dist",
+		"deploy:dev": "vite build --mode development && cp dist/index.html dist/200.html && surge dist"
+	},
+	"dependencies": {
+		"gsap": "^3.12.2",
+		"lodash": "^4.17.21",
+		"pinia": "^2.1.6",
+		"vue": "^3.3.4",
+		"vue-router": "^4.2.4"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^4.3.4",
+		"eslint": "^8.49.0",
+		"eslint-plugin-vue": "^9.17.0",
+		"node-sass": "^9.0.0",
+		"sass": "^1.69.4",
+		"sass-loader": "^13.3.2",
+		"unplugin-auto-import": "^0.16.6",
+		"vite": "^4.4.9"
+	}
+}
