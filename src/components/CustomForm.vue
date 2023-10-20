@@ -29,12 +29,11 @@
 		</Transition>
 
 		<action-block>
-			<button id="calculateTotal" data-route="total">Total</button>
+			<button @click="show.showTotal">Total</button>
 			<button @click="show.showSplit">Split It</button>
 			<button @click="togglePercetage()">Prefer a Percentage?</button>
 		</action-block>
 	</output-block>
-	{{ percentage }}
 </template>
 
 <script setup>
@@ -75,6 +74,6 @@
 	}
 
 	form {
-		min-height: 140px;
+		min-height: 142px;
 	}
 </style>

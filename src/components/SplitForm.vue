@@ -1,5 +1,5 @@
 <template>
-	<output-block>
+	<output-block class="split-route">
 		<div class="go-home">
 			<button @click="goHome()">
 				<SvgIcon icon="angle-left" />
@@ -18,9 +18,9 @@
 			/>
 		</form>
 
-		<div class="flex level-two-voice">
-			<p class="result">Total Per Person</p>
-			<p>$ {{ bill.perPersonSum }}</p>
+		<div class="flex">
+			<p class="result level-one-voice">Total Per Person</p>
+			<p class="level-four-voice">${{ bill.perPersonSum }}</p>
 		</div>
 	</output-block>
 </template>
@@ -39,7 +39,7 @@
 	};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	div.flex {
 		position: relative;
 		display: flex;
@@ -75,19 +75,18 @@
 		}
 
 		p {
-			font-size: inherit;
 			font-weight: 600;
 			font-family: monospace;
 		}
 
 		p.result {
-			font-family: 'Lobster', serif;
+			font-family: monospace;
 			font-weight: 500;
-			letter-spacing: 0.02;
+			letter-spacing: 0.02em;
 		}
 	}
 
-	output-block {
+	output-block.split-route {
 		form {
 			input {
 				padding-left: 1rem;

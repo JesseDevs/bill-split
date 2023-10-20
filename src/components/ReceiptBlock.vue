@@ -8,7 +8,7 @@
 		</receipt-box>
 		<receipt-box class="level-two-voice">
 			<h4>Tip Amount</h4>
-			<p>${{ bill.tipAmount }}</p>
+			<p>${{ bill.tipAmount !== null ? bill.tipAmount : 0 }}</p>
 		</receipt-box>
 		<receipt-box class="level-two-voice">
 			<h4>Total</h4>
@@ -40,6 +40,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		width: 100%;
 		position: relative;
 
 		background-color: var(--background-light);
