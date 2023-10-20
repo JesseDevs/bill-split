@@ -1,17 +1,16 @@
 <template>
 	<main>
 		<section>
-			<TransitionGroup name="list" tag="inner-column" class="landing">
-				<li key="form">
+			<inner-column class="landing">
+				<Transition name="fade" mode="out-in">
 					<BillForm v-if="show.showBillForm" />
 					<SplitForm v-else-if="show.showSplitForm" />
 					<CustomForm v-else-if="show.showCustomForm" />
-				</li>
+					<TotalDisplay v-else-if="show.showTotalDisplay" />
+				</Transition>
 
-				<li key="receipt">
-					<ReceiptBlock />
-				</li>
-			</TransitionGroup>
+				<ReceiptBlock />
+			</inner-column>
 		</section>
 	</main>
 </template>
@@ -21,6 +20,7 @@
 	import BillForm from '@/components/BillForm.vue';
 	import SplitForm from '@/components/SplitForm.vue';
 	import CustomForm from '@/components/CustomForm.vue';
+	import TotalDisplay from '@/components/TotalDisplay.vue';
 
 	import { useShowStore } from '@/stores/show';
 	const show = useShowStore();
@@ -35,6 +35,14 @@
 		@media (min-width: 768px) {
 			gap: 2.5rem;
 			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		output-block {
+			min-height: 355px;
+			max-height: 400px;
+			width: 100%;
 		}
 	}
 
@@ -66,22 +74,22 @@
 		}
 	}
 
-	.list-move,
-	.list-enter-active,
-	.list-leave-active {
-		transition: all 0.5s ease;
+	.fade-move,
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: opacity 0.5s ease;
 	}
 
-	.list-enter-from,
-	.list-leave-to {
+	.fade-enter-from,
+	.fade-leave-to {
 		opacity: 0;
-		transform: translateX(30px);
 	}
 
 	output-block {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 		gap: 20px;
+		width: 100%;
 
 		form {
 			display: block;

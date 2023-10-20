@@ -8,7 +8,7 @@ export const useBillStore = defineStore('bill', function () {
 	const amount = ref(null);
 	const subTotal = ref(0);
 
-	const tipAmount = ref(0);
+	const tipAmount = ref(null);
 	const total = computed(() => subTotal.value + tipAmount.value);
 
 	const currentAmount = ref(0);
